@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'bootstrap-icons';
+@plugin "daisyui";
+
+
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #000000;
+
+}
+
+
+
+/* #region font */
+.anton {
+  font-family: "Anton", sans-serif;
+  font-style: normal;
+}
+
+
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+}
+
+/* #endregion */
+
+/* Group 7 */
+
+/* #region promobanner */
+.promobanner {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+/* Rectangle 10 */
+.rectangle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(105.36deg, #5D3E06 6.09%, #EEB655 40.73%, #FFD387 60.52%, #A87F37 76.6%, #5D3E06 116.19%);
+  border-radius: 0px 0px 4px 4px;
+  z-index: 1;
+}
+
+/* SPECIAL PROMO */
+.promo-text {
+  position: relative;
+  z-index: 2;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+  color: #000000;
+}
+
+/* 13g : 02h : 18m */
+.promo-time {
+  position: relative;
+  z-index: 2;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  color: #000000;
+}
+
+/* #endregion */
+
+#hero {
+  background-image: url('src\assets\immagini\backgroundHero.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.btn-gold {
+  box-sizing: border-box;
+  background: linear-gradient(105.36deg, #5D3E06 6.09%, #EEB655 40.73%, #FFD387 60.52%, #A87F37 76.6%, #5D3E06 116.19%);
+  box-shadow: 0px 0px 11.1845px #FCAD55, 0px 0px 6.39113px #FCAD55, 0px 0px 3.72816px #FCAD55, 0px 0px 1.86408px #FCAD55, 0px 0px 0.532594px #FCAD55, 0px 0px 0.266297px #FCAD55;
+  border-radius: 29px;
+  padding: 8px 15px;
+}
+
+
+.pablofidati-container{
+  position: absolute;
+  display: inline-block;
+
+}
+.pablofidati-container::before{
+  content: '';
+  top: 0;
+  left: 0;
+  width: 30%; /* larghezza area sfocata */
+  height: 100%;
+  background: inherit;
+  filter: blur(100px);
+  background-image: url('src\assets\immagini\fidatipablo.svg');
+  background-size: cover;
+  background-position: left;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
