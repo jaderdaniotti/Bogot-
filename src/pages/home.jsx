@@ -7,8 +7,8 @@ import Convinto from "../components/Convinto";
 import ComparisonTable from "../components/ComparisonTable";
 import Descrizione from "../components/Descrizione";
 import Capelli from "../components/Capelli";
-import Unisciti from "../components/Unisciti";
-import Acquista from "../components/Acquista";
+import Unisciti from "../components/unisciti";
+import Acquista from "../components/acquista";
 import Footer from "../components/footer";
 
 const Home = () => (
@@ -31,7 +31,7 @@ const Home = () => (
     <Footer />
   </div>
   <div className="overmobile">
-    
+
   </div>
   </>
 );
