@@ -17,9 +17,9 @@ export default function Hero() {
         <h1 className="text-white  text-8xl  absolute top-6 left-1/2 transform -translate-x-1/2 z-2 anton">BOGOTÀ</h1>
         <p className="text-white z-4 text-2xl absolute top-3/4 left-1/2 transform -translate-x-1/2 w-100 text-center text-sm font-semibold italic montserrat">La polvere del Patron 
         <strong> pura al 100%</strong>
-        <button className="not-italic text-black px-3 py-2 z-4 text-2xl absolute top-3/5 translate-y-2/3 left-1/2 transform -translate-x-1/2 w-max text-center text-md font-bold btn-gold">
+        <a href="#MagicPowder" className="not-italic text-black px-3 py-2 z-4 text-2xl absolute top-3/5 translate-y-2/3 left-1/2 transform -translate-x-1/2 w-max text-center text-md font-bold btn-gold">
           Scopri Bogotà!
-        </button>
+        </a>
         </p>
       </div>
     </div>

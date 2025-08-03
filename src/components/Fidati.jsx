@@ -1,5 +1,5 @@
 import { FaStar } from "react-icons/fa";
-import fidati2 from "../assets/immagini/fidatipage.png";
+import fidati2 from "../assets/immagini/fidatipage2.png";
 
 export default function Fidati() {
     const titoli = [
@@ -57,10 +57,10 @@ export default function Fidati() {
 
     return (
         <div className="flex flex-col min-h-min max-h-min">
-            <section className="relative mb-0 bg-black overflow-hidden flex flex-col py-0 ">
+            <section className="relative mb-0 bg-black overflow-hidden flex flex-col ">
 
-                <img src={fidati2} alt="" className=" -translate-y-1/8 right-0 w-full h-full object-cover" />
-                <div className="carousel carousel-center -translate-y-12/8 rounded-box max-w-md space-x-5 gap-10 p-5">
+                <img src={fidati2} alt="" className=" w-full h-full object-cover" />
+                 <div className="carousel carousel-center -translate-y-6/10 rounded-box max-w-md space-x-5 gap-10 p-5">
                     {reviews.map((rec) => (
                         <div
                             key={rec.id}
@@ -79,7 +79,6 @@ export default function Fidati() {
                                     />
                                 </div>
 
-                                {/* recnesione */}
                                 <div className="flex flex-col left-3 relative">
                                     <p className="text-white text-3xl anton  tracking-wide font-bold">{rec.titolo}</p>
                                     <p className="text-white text-sm w-3/4 leading-tight mt-1">{rec.frase}</p>
@@ -88,7 +87,7 @@ export default function Fidati() {
                         </div>
 
                     ))}
-                </div>
+                </div> 
             </section>
         </div>
     );

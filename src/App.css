@@ -121,54 +121,16 @@ body {
   background-position: left;
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.overmobile {
+  display: none;
+}
 
 @media screen and (min-width: 450px) {
   .solo-mobile {
     display: none;
+  }
+  .overmobile {
+    display: block;
   }
 }
 
