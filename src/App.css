@@ -86,7 +86,7 @@ body {
 /* #endregion */
 
 #hero {
-  background-image: url('src\assets\immagini\backgroundHero.png');
+  background-image: url('src/assets/immagini/backgroundHero.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

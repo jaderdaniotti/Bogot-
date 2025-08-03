@@ -6,7 +6,7 @@ import Fidati from "../components/Fidati";
 import Convinto from "../components/Convinto";
 import ComparisonTable from "../components/ComparisonTable";
 import Descrizione from "../components/Descrizione";
-import Capelli from "../components/Capelli";
+import Capelli from "../components/capelli";
 import Unisciti from "../components/unisciti";
 import Acquista from "../components/acquista";
 import Footer from "../components/footer";
