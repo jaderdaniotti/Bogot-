@@ -10,6 +10,7 @@ import Capelli from "../components/capelli";
 import Unisciti from "../components/unisciti";
 import Acquista from "../components/acquista";
 import Footer from "../components/footer";
+import qrcode from "../assets/immagini/qrcode.jpg";
 
 const Home = () => (
   <>
@@ -30,8 +31,13 @@ const Home = () => (
     <br />
     <Footer />
   </div>
-  <div className="overmobile">
-
+  <div className="overmobile h-screen w-screen flex justify-center bg-white items-center ">
+    <div className="my-auto flex flex-col gap-10">
+    <h1 className="text-black text-5xl relative translate-y-1/2 text-center anton font-bold">
+      Scansiona il QR code per accedere al nostro sito
+    </h1>
+    <img src={qrcode} alt="qrcode" className="object-contain mx-auto my-auto" />
+    </div>
   </div>
   </>
 );

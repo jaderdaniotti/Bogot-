@@ -48,7 +48,7 @@ export default function LoadingScreen({ onLoadingComplete }) {
         // Timer minimo di 5 secondi
         const minTimer = setTimeout(() => {
             setMinTimeElapsed(true);
-        }, 5000);
+        }, 3000);
 
         // Timer per l'animazione della barra di progresso
         const progressInterval = setInterval(() => {
