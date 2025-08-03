@@ -5,7 +5,7 @@ export default function Footer() {
         <div>
             <hr className="text-[#DF9F5D]" />
             <div className="flex justify-center items-center h-25">
-                <p className="italic font-light text-md text-center py-5">
+                <p className="italic font-light text-md text-white text-center py-5">
                     Bogotà non è una sostanza illegale, <br />ma puó creare dipendenza. <br />Usala con moderazione. Oppure no.
                 </p>
             </div>

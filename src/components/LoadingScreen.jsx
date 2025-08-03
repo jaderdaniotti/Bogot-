@@ -21,6 +21,8 @@ import tiktok from '../assets/immagini/tiktok.svg';
 export default function LoadingScreen({ onLoadingComplete }) {
     const [loadingProgress, setLoadingProgress] = useState(0);
     const [isLoading, setIsLoading] = useState(true);
+    const [imagesLoaded, setImagesLoaded] = useState(false);
+    const [minTimeElapsed, setMinTimeElapsed] = useState(false);
 
     // Lista di tutte le immagini importate
     const imagesToPreload = [
@@ -43,6 +45,21 @@ export default function LoadingScreen({ onLoadingComplete }) {
     ];
 
     useEffect(() => {
+        // Timer minimo di 5 secondi
+        const minTimer = setTimeout(() => {
+            setMinTimeElapsed(true);
+        }, 5000);
+
+        // Timer per l'animazione della barra di progresso
+        const progressInterval = setInterval(() => {
+            setLoadingProgress(prev => {
+                if (prev < 90) {
+                    return prev + Math.random() * 15;
+                }
+                return prev;
+            });
+        }, 200);
+
         let loadedImages = 0;
         const totalImages = imagesToPreload.length;
 
@@ -52,25 +69,19 @@ export default function LoadingScreen({ onLoadingComplete }) {
                 img.onload = () => {
                     loadedImages++;
                     const progress = Math.round((loadedImages / totalImages) * 100);
-                    setLoadingProgress(progress);
+                    setLoadingProgress(Math.max(progress, loadingProgress));
                     
                     if (loadedImages === totalImages) {
-                        setTimeout(() => {
-                            setIsLoading(false);
-                            onLoadingComplete();
-                        }, 500); // Piccola pausa per transizione fluida
+                        setImagesLoaded(true);
                     }
                 };
                 img.onerror = () => {
                     loadedImages++;
                     const progress = Math.round((loadedImages / totalImages) * 100);
-                    setLoadingProgress(progress);
+                    setLoadingProgress(Math.max(progress, loadingProgress));
                     
                     if (loadedImages === totalImages) {
-                        setTimeout(() => {
-                            setIsLoading(false);
-                            onLoadingComplete();
-                        }, 500);
+                        setImagesLoaded(true);
                     }
                 };
                 img.src = src;
@@ -78,7 +89,23 @@ export default function LoadingScreen({ onLoadingComplete }) {
         };
 
         preloadImages();
-    }, [onLoadingComplete]);
+
+        // Cleanup
+        return () => {
+            clearTimeout(minTimer);
+            clearInterval(progressInterval);
+        };
+    }, []);
+
+    // Controlla se possiamo nascondere il loading
+    useEffect(() => {
+        if (imagesLoaded && minTimeElapsed) {
+            setTimeout(() => {
+                setIsLoading(false);
+                onLoadingComplete();
+            }, 500);
+        }
+    }, [imagesLoaded, minTimeElapsed, onLoadingComplete]);
 
     if (!isLoading) return null;
 
@@ -100,14 +127,14 @@ export default function LoadingScreen({ onLoadingComplete }) {
                     <div className="bg-gray-800 rounded-full h-3 overflow-hidden">
                         <div 
                             className="bg-gradient-to-r from-yellow-400 to-yellow-600 h-full transition-all duration-300 ease-out"
-                            style={{ width: `${loadingProgress}%` }}
+                            style={{ width: `${Math.min(loadingProgress, 100)}%` }}
                         ></div>
                     </div>
                 </div>
 
                 {/* Progress Text */}
                 <p className="text-white text-sm montserrat">
-                    Caricamento... {loadingProgress}%
+                    Caricamento... {Math.round(Math.min(loadingProgress, 100))}%
                 </p>
 
                 {/* Loading Animation */}
